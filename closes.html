@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<title>Closes Tool</title>
+
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+	<!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+	<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+  <![endif]-->
+
+</head>
+
+<body onload="output()">
+	<div class="col-sm-2">
+		<div class="col-sm-12">
+			<h3>Mileage</h3>
+			<div class="input-group">
+				<span class="input-group"></span>
+				<input type="text" class="form-control" id="miles" placeholder="Mileage" oninput="output()">
+			</div>
+		</div>
+		<div class="col-sm-12">
+			<h3>Transmission</h3>
+			<div class="btn-group-vertical" id="transmission" data-toggle="buttons">
+				<label class="btn btn-primary active">
+					<input type="radio" name="transmission" id="Auto" value="Auto" autocomplete="off" checked="checked" onchange="output();"> Automatic
+				</label>
+				<label class="btn btn-primary">
+					<input type="radio" name="transmission" id="Manual" value="Manual" autocomplete="off" onchange="output()"> Manual
+				</label>
+			</div>
+		</div>
+
+		<div class="col-sm-12">
+			<h3>Repo Type</h3>
+			<div class="btn-group-vertical" data-toggle="buttons">
+				<label class="btn btn-primary active">
+					<input type="radio" name="repo" id="option1" value="Reg" checked="checked" autocomplete="off" onchange="output();"> Reg
+				</label>
+				<label class="btn btn-primary">
+					<input type="radio" name="repo" id="option2" value="Volly" autocomplete="off" onchange="output();"> Volly
+				</label>
+				<label class="btn btn-primary">
+					<input type="radio" name="repo" id="option3" value="Impound" autocomplete="off" onchange="output();"> Impound
+				</label>
+			</div>
+		</div>
+		<div class="col-sm-12">
+			<h3>Keys?</h3>
+			<div class="btn-group-vertical" data-toggle="buttons">
+				<label class="btn btn-primary">
+					<input type="radio" name="keys" id="option1" value="Yes" autocomplete="off" onchange="output();"> Yes
+				</label>
+				<label class="btn btn-primary active">
+					<input type="radio" name="keys" id="option2" value="No" checked="checked" autocomplete="off" onchange="output();"> No
+				</label>
+			</div>
+		</div>
+	</div>
+	<div class="col-sm-2">
+		<h3>Power Options</h3>
+		<div class="checkbox">
+			<label class="active"><input type="checkbox" class="poweroptions" checked="checked" value="Windows" onchange="output();">Windows</label>
+		</div>
+		<div class="checkbox">
+			<label><input type="checkbox" class="poweroptions" checked="checked" checked="checked" value="Seats" onchange="output();">Seats</label>
+		</div>
+		<div class="checkbox">
+			<label><input type="checkbox" class="poweroptions" checked="checked" value="Leather" onchange="output();">Leather</label>
+		</div>
+		<div class="checkbox">
+			<label><input type="checkbox" class="poweroptions" checked="checked" value="Locks" onchange="output();">Locks</label>
+		</div>
+		<div class="checkbox">
+			<label><input type="checkbox" class="poweroptions" checked="checked" value="Steering" onchange="output();">Steering</label>
+		</div>
+		<div class="checkbox">
+			<label><input type="checkbox" class="poweroptions" value="Alloy Wheels" onchange="output();">Alloy Wheels</label>
+		</div>
+		<div class="checkbox">
+			<label><input type="checkbox" class="poweroptions" checked="checked" value="Tilt Wheel" onchange="output();">Tilt Wheel</label>
+		</div>
+		<div class="checkbox">
+			<label><input type="checkbox" class="poweroptions" checked="checked" value="Cruise Control" onchange="output();">Cruise Control</label>
+		</div>
+		<div class="checkbox">
+			<label><input type="checkbox" class="poweroptions" checked="checked" value="A/C" onchange="output();">A/C</label>
+		</div>
+		<div class="checkbox">
+			<label><input type="checkbox" class="poweroptions" checked="checked" value="AM/FM/CD" onchange="output();">AM/FM/CD</label>
+		</div>
+		<div class="checkbox">
+			<label><input type="checkbox" class="poweroptions" value="Moon Roof" onchange="output();">Moon Roof</label>
+		</div>
+		<div class="checkbox">
+			<label><input type="checkbox" class="poweroptions" value="Sun Roof" onchange="output();">Sun Roof</label>
+		</div>
+		<div class="checkbox">
+			<input type="text" class="form-control" id="otherpower" placeholder="Other" aria-describedby="basic-addon1" oninput="output()">
+		</div>
+	</div>
+	<div class="col-sm-8">
+		<div class="row">
+			<div class="col-sm-3">
+				<h2>Interior</h2>
+				<div class="btn-group-vertical" data-toggle="buttons">
+					<label class="interior btn btn-primary">
+						<input type="radio" name="interior" value="Good" id="option1" autocomplete="off" onfocus="clearStuff('interioroption');"> Good
+					</label>
+					<label class="interior btn btn-primary active">
+						<input type="radio" name="interior" value="Average" checked="checked" id="option2" autocomplete="off" onfocus="clearStuff('interioroption');"> Average
+					</label>
+					<label class="interior btn btn-primary">
+						<input type="radio" name="interior" value="Dirty" id="option3" autocomplete="off" onfocus="clearStuff('interioroption');"> Dirty
+					</label>
+					<label class="interior btn btn-primary">
+						<input type="radio" name="interior" value="Very Dirty" id="option4" autocomplete="off" onfocus="clearStuff('interioroption');"> Very Dirty
+					</label>
+					<label id="interiorother" class="interior btn btn-primary">
+						<input type="text" name="interior" class="form-control" id="interioroption" placeholder="Other" onfocus="changeActive('interior');"  oninput="output()">
+					</label>
+				</div>
+			</div>
+
+			<div class="col-sm-3">
+				<h2>Exterior</h2>
+				<div class="btn-group-vertical" data-toggle="buttons">
+					<label class="exterior btn btn-primary">
+						<input type="radio" name="exterior" value="Good" id="option1" autocomplete="off" onfocus="clearStuff('exterioroption');"> Good
+					</label>
+					<label class="exterior btn btn-primary">
+						<input type="radio" name="exterior" value="Average" id="option2" autocomplete="off" onfocus="clearStuff('exterioroption');"> Average
+					</label>
+					<label class="exterior btn btn-primary active">
+						<input type="radio" name="exterior" value="Scratches & Dings" checked="checked" id="option3" autocomplete="off" onfocus="clearStuff('exterioroption');"> Scratches &amp; Dings
+					</label>
+					<label class="exterior btn btn-primary">
+						<input type="radio" name="exterior" value="Dents" id="option4" autocomplete="off" onfocus="clearStuff('exterioroption');"> Dents
+					</label>
+					<label id="exteriorother" class="exterior btn btn-primary">
+						<input type="text" name="exterior" class="form-control" id="exterioroption" placeholder="Other" onfocus="changeActive('exterior');" oninput="output()">
+					</label>
+				</div>
+			</div>
+
+
+			<div class="col-sm-3">
+				<h2>Tires</h2>
+				<div class="btn-group-vertical" data-toggle="buttons">
+					<label class="tires btn btn-primary">
+						<input type="radio" name="tires" value="Good" id="option1" autocomplete="off" onfocus="clearStuff('tiresoption');"> Good
+					</label>
+					<label class="tires btn btn-primary">
+						<input type="radio" name="tires" value="Average" id="option2" autocomplete="off" onfocus="clearStuff('tiresoption');"> Average
+					</label>
+					<label class="tires btn btn-primary active">
+						<input type="radio" name="tires" value="Poor" checked="checked" id="option3" autocomplete="off" onfocus="clearStuff('tiresoption');"> Poor
+					</label>
+					<label id="tiresother" class="tires btn btn-primary">
+						<input type="text" name="tires" class="form-control" id="tiresoption" placeholder="Other" onfocus="changeActive('tires');" oninput="output()">
+					</label>
+				</div>
+			</div>
+
+
+			<div class="col-sm-3"
+			<h2>&nbsp;</h2>
+			<div class="input-group">
+				<span class="input-group"></span>
+				<input type="text" class="form-control" placeholder="Pprwrk Assigned to:" id="ppwrk" aria-describedby="basic-addon1" oninput="output()">
+				<div class="btn-group" data-toggle="buttons" style="width: 100%">
+					<label class="btn btn-primary active">
+						<input type="radio" name="PUD" value="picked up by" id="option1" autocomplete="off" checked="checked" onchange="output();"> Picked up by
+					</label>
+					<label class="btn btn-primary" style="width: 35%">
+						<input type="radio" name="PUD" value="del to" id="option2" autocomplete="off" onchange="output();"> Del to
+					</label>
+				</div>
+				<input type="text" class="form-control" id="agency" placeholder="Repo Agency" aria-describedby="basic-addon1" oninput="output()">
+				<div class="input-group"><span class="input-group-addon">$</span><input type="text" class="form-control" id="fees" placeholder="Repo Fees" aria-describedby="basic-addon1" oninput="output()"></div>
+				<input type="text" class="form-control" id="invoice" placeholder="Invoice #" aria-describedby="basic-addon1" oninput="output()">
+				<input type="text" class="form-control" id="PU" placeholder="Vhcl PU @" aria-describedby="basic-addon1" oninput="output()">
+				<input type="text" class="form-control" id="auction" placeholder="Auto Auction" aria-describedby="basic-addon1" oninput="output()">
+			</div>
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-sm-3">
+			<h2>Glass</h2>
+			<div class="btn-group-vertical" data-toggle="buttons">
+				<label class="glass btn btn-primary active">
+					<input type="radio" name="glass" value="Good" checked="checked" id="option1" autocomplete="off" onfocus="clearStuff('glassoption');"> Good
+				</label>
+				<label class="glass btn btn-primary">
+					<input type="radio" name="glass" value="Chipped" id="option2" autocomplete="off" onfocus="clearStuff('glassoption');"> Chipped
+				</label>
+				<label class="glass btn btn-primary">
+					<input type="radio" name="glass" value="Broken" id="option3" autocomplete="off" onfocus="clearStuff('glassoption');"> Broken
+				</label>
+				<label class="glass btn btn-primary">
+					<input type="radio" name="glass" value="Cracked" id="option4" autocomplete="off" onfocus="clearStuff('glassoption');"> Cracked
+				</label>
+				<label id="glassother" class="glass btn btn-primary">
+					<input type="text" name="glass" class="form-control" id="glassoption" placeholder="Other" onfocus="changeActive('glass');" oninput="output()">
+				</label>
+			</div>
+		</div>
+
+
+		<div class="col-sm-3">
+			<h2>Mech</h2>
+			<div class="btn-group-vertical" data-toggle="buttons">
+				<label class="mech btn btn-primary">
+					<input type="radio" name="mech" value="Good" id="option1" autocomplete="off" onfocus="clearStuff('mechoption');"> Good
+				</label>
+				<label class="mech btn btn-primary">
+					<input type="radio" name="mech" value="Average" id="option2" autocomplete="off" onfocus="clearStuff('mechoption');"> Average
+				</label>
+				<label class="mech btn btn-primary active">
+					<input type="radio" name="mech" value="Unknown" checked="checked" id="option3" autocomplete="off" onfocus="clearStuff('mechoption');"> Unknown
+				</label>
+				<label class="mech btn btn-primary">
+					<input type="radio" name="mech" value="Rough" id="option4" autocomplete="off" onfocus="clearStuff('mechoption');"> Rough
+				</label>
+				<label id="mechother" class="mech btn btn-primary">
+					<input type="text" name="mech" class="form-control" id="mechoption" placeholder="Other" onfocus="changeActive('mech');" oninput="output()">
+				</label>
+			</div>
+		</div>
+
+
+		<div class="col-sm-6">
+			<h4>&nbsp;</h4>
+			<h2>Output <button class="btn btn-primary" data-copytarget="#output">copy</button></h2>
+			<div class="panel panel-default">
+				<textarea type="text" name="output" class="panel-body" id="output" style="height: 250px; width: 100%;"></textarea>
+			</div>
+		</div>
+	</div>
+</div>
+</div>
+</div>
+
+<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<!-- Include all compiled plugins (below), or include individual files as needed -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+<script>
+	(function() {
+
+		'use strict';
+
+  // click events
+  document.body.addEventListener('click', copy, true);
+
+  // event handler
+  function copy(e) {
+
+    // find target element
+    var
+    t = e.target,
+    c = t.dataset.copytarget,
+    inp = (c ? document.querySelector(c) : null);
+
+    // is element selectable?
+    if (inp && inp.select) {
+
+      // select text
+      inp.select();
+
+      try {
+        // copy text
+        document.execCommand('copy');
+        inp.blur();
+    }
+    catch (err) {
+    	alert('please press Ctrl/Cmd+C to copy');
+    }
+
+}
+
+}
+
+})();
+var milesForm = document.getElementById("miles");
+var pprwrk = document.getElementById("ppwrk");
+var agenc = document.getElementById("agency");
+var fee = document.getElementById("fees");
+var invoic = document.getElementById("invoice");
+var p = document.getElementById("PU");
+var auctio = document.getElementById("auction");
+var inter2 = document.getElementById("interioroption");
+var ext2 = document.getElementById("exterioroption");
+var tire2 = document.getElementById("tiresoption");
+var glass2 = document.getElementById("glassoption");
+var mech2 = document.getElementById("mechoption");
+var inttemp;
+var transmis = "Auto";
+var repos = "Reg";
+var key = "No";
+var inter = "Average";
+var glas = "Good";
+var ext = "Scratches & Dings";
+var mechanic = "Unknown";
+var tir = "Poor";
+var poweroptions;
+var powerother = document.getElementById("otherpower");
+function clearStuff(id) {
+	document.getElementById(id).value = "";
+	output();
+}
+function update() {
+	transmis = getRadioValue("transmission");
+	repos = getRadioValue("repo");
+	puds = getRadioValue("PUD");
+	key = getRadioValue("keys");
+	inter = getRadioValue("interior");
+	glas = getRadioValue("glass");
+	ext = getRadioValue("exterior");
+	mechanic = getRadioValue("mech");
+	tire = getRadioValue("tires");
+	powerOptions();
+}
+function changeActive(oldClassName) {
+	var x = document.getElementsByClassName(oldClassName + ' btn btn-primary');
+	for (var i = 0; i < x.length; i++) {
+		x[i].className = oldClassName + " btn btn-primary";
+	}
+	document.getElementById(oldClassName + 'other').className = oldClassName + " btn btn-primary active";
+}
+function powerOptions() {
+	poweroptions = Array.prototype.slice.call(document.querySelectorAll(".poweroptions:checked")).map(function(el) {
+		return el.value;
+	}).join(', ')
+}
+function output() {
+	update();
+	var out = 'C/R Summary: mlg ' + milesForm.value + ' — ' + transmis + ' Trans' + ' — Power Options: ' + poweroptions + ', ' + powerother.value + ' — Int ' + ((document.getElementById('interioroption').value) ? inter2.value : inter) + ' — Ext ' + ((document.getElementById('exterioroption').value) ? ext2.value : ext) + ' — Tires ' + ((document.getElementById('tiresoption').value) ? tire2.value : tire) + ' — Glass ' + ((document.getElementById('glassoption').value) ? glass2.value : glas) + ' — Mech ' + ((document.getElementById('mechoption').value) ? mech2.value : mechanic) + ' — Keys: ' + key + '\n\n Repo Summary: ' + repos + ' repo, ppwrk to ' + pprwrk.value + ', Repo Fees $' + fee.value + ', inv# ' + invoic.value + ', ' + agenc.value + ', Vhcl PU @ ' + p.value + ', Vhcl to be ' + puds + ' ' + auctio.value;
+	document.getElementsByName('output')[0].value = out;
+      //var client = new ZeroClipboard( document.getElementById("copy-button") );
+  }
+  function getRadioValue(theRadioGroup)
+  {
+  	var elements = document.getElementsByName(theRadioGroup);
+  	for (var i = 0, l = elements.length; i < l; i++)
+  	{
+  		if (elements[i].checked)
+  		{
+  			return elements[i].value;
+  		}
+  	}
+  }
+    /*
+    Copy text from any appropriate field to the clipboard
+  By Craig Buckler, @craigbuckler
+  use it, abuse it, do whatever you like with it!
+  */
+</script>
+</body>
+</html>
